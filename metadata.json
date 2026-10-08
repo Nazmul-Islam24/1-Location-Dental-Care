@@ -1,0 +1,6 @@
+{
+  "name": "Verdant Dental Care | Warm Modern Dental Clinic",
+  "description": "Warm, modern, patient-first dental clinic website built precisely to the Master Dental Blueprint, featuring calm care, doctor profiles, transparent treatments, interactive booking, and before-after smile analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var currentFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function () {
+              return currentFetch;
+            },
+            set: function (newFetch) {
+              currentFetch = newFetch;
+            }
+          });
+        } catch (e) {}
+
+        try {
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            var protoFetch = Window.prototype.fetch;
+            Object.defineProperty(Window.prototype, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function () {
+                return currentFetch || protoFetch;
+              },
+              set: function (newFetch) {
+                currentFetch = newFetch;
+                protoFetch = newFetch;
+              }
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Verdant Dental Care | Modern Family & Cosmetic Dentist in Manhattan, NY</title>
+    <meta
+      name="description"
+      content="Verdant Dental Care provides personalized general, cosmetic, and restorative dental care in Manhattan with a calm, comfort-first approach. Book an appointment today."
+    />
+    <meta name="keywords" content="dentist manhattan, cosmetic dentistry nyc, dental implants, teeth whitening, emergency dentist, gentle family dental care" />
+    <meta name="author" content="Verdant Dental Care" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://verdantdentalcare.com/" />
+
+    <!-- OpenGraph Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Verdant Dental Care" />
+    <meta property="og:title" content="Verdant Dental Care | Warm Modern Dental Care in Manhattan" />
+    <meta
+      property="og:description"
+      content="A healthier smile starts with feeling comfortable. Personalized dental care with comfort, clarity, and transparent pricing."
+    />
+    <meta property="og:image" content="./src/assets/images/home-hero.avif" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Verdant Dental Care | Modern Family & Cosmetic Dentistry" />
+    <meta
+      name="twitter:description"
+      content="Thoughtful dentistry delivered with compassion. Routine checkups, smile design, implants, and emergency care."
+    />
+    <meta name="twitter:image" content="./src/assets/images/home-hero.avif" />
+
+    <!-- Google Fonts: Plus Jakarta Sans, Inter, Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LocalBusiness / Dentist Structured Data (JSON-LD) per Master Blueprint Section 36 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Verdant Dental Care",
+      "image": "./src/assets/images/home-hero.avif",
+      "url": "https://verdantdentalcare.com",
+      "telephone": "+1-212-555-0198",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "420 Lexington Ave, Suite 1400",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10170",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.7516,
+        "longitude": -73.9754
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/verdantdental",
+        "https://www.facebook.com/verdantdentalnyc",
+        "https://www.linkedin.com/company/verdant-dental"
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-[#FAFAF7] text-[#172323] antialiased selection:bg-[#DDF3EE] selection:text-[#0F5B5B]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
